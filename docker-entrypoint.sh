@@ -10,4 +10,13 @@ if [ "$CREATE_USER_UID" -a "$CREATE_USER_GID" ]; then
     useradd -d /var/www -g $CREATE_USER_GID -s /bin/false -M -N -u $CREATE_USER_UID site-owner
 fi
 
+if [ -n "$PACKAGE_DIR" -a -d "$PACKAGE_DIR" ]; then
+    cd $PACKAGE_DIR
+    if [ -f "$PACKAGE_DIR/yarn.lock" ]; then
+        /usr/bin/yarn install
+    else
+        /usr/bin/npm install
+    fi
+fi
+
 exec "$@"
