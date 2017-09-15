@@ -12,6 +12,7 @@ RUN \
         build-essential \
         nodejs \
         yarn \
+        libfreetype6 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm /var/log/dpkg.log \
