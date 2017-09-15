@@ -13,11 +13,10 @@ fi
 if [ -n "$PACKAGE_DIR" -a -d "$PACKAGE_DIR" ]; then
     cd $PACKAGE_DIR
     /usr/bin/yarn install --production --global --link-folder /usr/local/bin/ --modules-folder /usr/lib/node_modules/ --global-folder /usr/lib/node_modules/
+	if [ "$1" = "start" ]; then
+		cd $PACKAGE_DIR
+		/usr/local/bin/gosu site-owner:site-owner /usr/bin/yarn start
+	fi
 fi
 
-if [ "$@" = "start" ]; then
-	cd $PACKAGE_DIR
-	/usr/local/bin/gosu site-owner:site-owner /usr/bin/yarn start
-else
-	exec "$@"
-fi
+exec "$@"
