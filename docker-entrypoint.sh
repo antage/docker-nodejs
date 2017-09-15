@@ -12,11 +12,12 @@ fi
 
 if [ -n "$PACKAGE_DIR" -a -d "$PACKAGE_DIR" ]; then
     cd $PACKAGE_DIR
-    if [ -f "$PACKAGE_DIR/yarn.lock" ]; then
-        /usr/bin/yarn install --production --global
-    else
-        /usr/bin/npm install --production --global
-    fi
+    /usr/bin/yarn install --production --global --link-folder /usr/local/bin/ --modules-folder /usr/lib/node_modules/ --global-folder /usr/lib/node_modules/
 fi
 
-exec "$@"
+if [ "$@" = "start" ]; then
+	cd $PACKAGE_DIR
+	/usr/local/bin/gosu site-owner:site-owner /usr/bin/yarn start
+else
+	exec "$@"
+fi

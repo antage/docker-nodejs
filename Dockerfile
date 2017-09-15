@@ -27,4 +27,4 @@ RUN mkdir -p /var/www
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["nodejs"]
+CMD ["start"]
