@@ -13,6 +13,7 @@ RUN \
         nodejs \
         yarn \
         libfreetype6 \
+        libfontconfig1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm /var/log/dpkg.log \
