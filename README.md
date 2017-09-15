@@ -11,7 +11,7 @@ Just run `make`.
 ## Volumes
 
 * `/var/www`
-* `/var/lib/nodejs/node_modules`
+* `/usr/lib/node_modules`
 
 ## Exposed ports
 
@@ -19,6 +19,4 @@ Just run `make`.
 
 * `CREATE_USER_UID`
 * `CREATE_USER_GID`
-* `NODE_PATH` (default: `/var/lib/nodejs/node_modules`)
-* `NPM_CONFIG_PREFIX` (default: `/var/lib/nodejs/node_modules`)
 * `PACKAGE_DIR` (optional, directory where `package.json` is located)

@@ -21,12 +21,8 @@ RUN \
     && chmod +x /usr/local/bin/gosu
 
 ENV LANG=C
-ENV NODE_PATH=/var/lib/nodejs/node_modules
-ENV NPM_CONFIG_PREFIX=/var/lib/nodejs/node_modules
 
-RUN \
-    mkdir -p /var/www \
-    && mkdir -p /var/lib/nodejs/node_modules
+RUN mkdir -p /var/www
 
 COPY docker-entrypoint.sh /
 

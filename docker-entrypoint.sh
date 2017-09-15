@@ -13,9 +13,9 @@ fi
 if [ -n "$PACKAGE_DIR" -a -d "$PACKAGE_DIR" ]; then
     cd $PACKAGE_DIR
     if [ -f "$PACKAGE_DIR/yarn.lock" ]; then
-        /usr/bin/yarn install
+        /usr/bin/yarn install --production --global
     else
-        /usr/bin/npm install
+        /usr/bin/npm install --production --global
     fi
 fi
 
