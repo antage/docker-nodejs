@@ -11,7 +11,6 @@ if [ "$CREATE_USER_UID" -a "$CREATE_USER_GID" ]; then
 fi
 
 if [ -n "$PACKAGE_DIR" -a -d "$PACKAGE_DIR" ]; then
-	/usr/bin/npm config set prefix "$NODE_PATH"
     cd $PACKAGE_DIR
     if [ -f "$PACKAGE_DIR/yarn.lock" ]; then
         /usr/bin/yarn install

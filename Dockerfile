@@ -21,6 +21,7 @@ RUN \
 
 ENV LANG=C
 ENV NODE_PATH=/var/lib/nodejs/node_modules
+ENV NPM_CONFIG_PREFIX=/var/lib/nodejs/node_modules
 
 RUN \
     mkdir -p /var/www \

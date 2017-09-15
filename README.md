@@ -20,4 +20,5 @@ Just run `make`.
 * `CREATE_USER_UID`
 * `CREATE_USER_GID`
 * `NODE_PATH` (default: `/var/lib/nodejs/node_modules`)
+* `NPM_CONFIG_PREFIX` (default: `/var/lib/nodejs/node_modules`)
 * `PACKAGE_DIR` (optional, directory where `package.json` is located)
