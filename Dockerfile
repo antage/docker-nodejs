@@ -12,6 +12,7 @@ RUN \
         build-essential \
         nodejs \
         yarn \
+        jq \
         libfreetype6 \
         libfontconfig1 \
     && apt-get clean \
