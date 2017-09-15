@@ -12,7 +12,7 @@ fi
 
 if [ -n "$PACKAGE_DIR" -a -d "$PACKAGE_DIR" ]; then
     cd $PACKAGE_DIR
-    /usr/bin/yarn install --production --no-bin-links --modules-folder /usr/lib/node_modules/
+    /usr/bin/yarn install --production --no-bin-links --modules-folder /usr/local/lib/node_modules/
 	if [ "$1" = "start" ]; then
 		cd $PACKAGE_DIR
 		/usr/local/bin/gosu site-owner:site-owner /usr/bin/nodejs $(jq -r '.main' package.json)
